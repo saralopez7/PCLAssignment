@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CanteenSalesSystem", "CanteenSalesSystem\CanteenSalesSystem.fsproj", "{3054C752-00FE-40BB-9C85-D67211B499DD}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Phase1", "Phase1\Phase1.fsproj", "{F04A274C-CBF9-4297-99A9-9CD986B20CB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3054C752-00FE-40BB-9C85-D67211B499DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3054C752-00FE-40BB-9C85-D67211B499DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3054C752-00FE-40BB-9C85-D67211B499DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3054C752-00FE-40BB-9C85-D67211B499DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04A274C-CBF9-4297-99A9-9CD986B20CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04A274C-CBF9-4297-99A9-9CD986B20CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04A274C-CBF9-4297-99A9-9CD986B20CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04A274C-CBF9-4297-99A9-9CD986B20CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
