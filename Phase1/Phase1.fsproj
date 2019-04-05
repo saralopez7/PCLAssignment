@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="NewDrinkModel.fs" />
     <Compile Include="DrinkModel.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
