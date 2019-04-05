@@ -26,7 +26,7 @@ type BottleDrinks =
         | Milk-> 7.5
         | Juice  -> 10.7
 
-type drinks =
+type AllDrinks =
     | Cup of CupDrinks * DrinkSize
     | Can of CanDrinks * DrinkSize
     | Bottle of BottleDrinks * DrinkSize
