@@ -35,5 +35,3 @@ type drinks =
         | Cup (cupDrink, size) -> cupDrink.price + (15.0 * (float size))
         | Can (canDrink, size) -> canDrink.price + (5.0 * (float size))
         | Bottle (bottleDrink, size) -> bottleDrink.price + (10.0 * (float size))
-
-                       
