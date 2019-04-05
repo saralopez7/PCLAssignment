@@ -27,11 +27,11 @@ type BottleDrinks =
         | Juice  -> 10.7
 
 type AllDrinks =
-    | Cup of CupDrinks * DrinkSize
-    | Can of CanDrinks * DrinkSize
-    | Bottle of BottleDrinks * DrinkSize
+    | InCup of  DrinkSize * CupDrinks
+    | InCan of  DrinkSize * CanDrinks
+    | InBottle of  DrinkSize * BottleDrinks
      member this.Price = 
         match this with 
-        | Cup (cupDrink, size) -> cupDrink.price + (15.0 * (float size))
-        | Can (canDrink, size) -> canDrink.price + (5.0 * (float size))
-        | Bottle (bottleDrink, size) -> bottleDrink.price + (10.0 * (float size))
+        | InCup (size, cupDrink) -> cupDrink.price + (15.0 * (float size))
+        | InCan (size, canDrink) -> canDrink.price + (5.0 * (float size))
+        | InBottle (size, bottleDrink) -> bottleDrink.price + (10.0 * (float size))
