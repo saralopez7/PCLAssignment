@@ -6,20 +6,20 @@ type CanteenMessage =
     | OrderDrink of AllDrinks * int 
     | LeaveAComment of string 
     
-let mutable Orders = []
-let mutable Comments = []
+let Orders = ref []
+let Comments = ref []
 
 let ProcessOrderDrink (drink:AllDrinks, amount:int) = 
     try
         let order = OrderDrink(drink, amount)
-        Orders <-  order :: Orders
+        Orders :=  order :: !Orders
         printfn "Please pay DKK %f for your %i %s drinks. Thanks!" (getDrinkPrice(drink) * (double amount)) amount drink.Type
     with
         | Failure(msg) -> printfn "Something went wrong while processing your order. %s. Please try again" msg
 
 let ProcessLeaveAComment (comment:string) =
-    Comments <- LeaveAComment(comment) :: Comments
-    printfn "Comment %s received by the canteen." comment
+    Comments := LeaveAComment(comment) :: !Comments
+    printfn "Comment %s was received by the canteen." comment
 
 let canteenDrinkAgent = 
     MailboxProcessor.Start(fun inbox->
@@ -29,7 +29,9 @@ let canteenDrinkAgent =
                 match canteenMessage with
                 | OrderDrink (drink, amount) -> ProcessOrderDrink (drink, amount)
                 | LeaveAComment (comment) -> ProcessLeaveAComment comment
+
                 return! messageLoop
             }
         messageLoop
     )
+   

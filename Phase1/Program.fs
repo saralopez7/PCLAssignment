@@ -4,8 +4,8 @@
 let main argv =
     
     // Create InCups
-    let darkCoffe = InCup( { Drink=Dark; Size=DrinkSize.Large } )
-    printfn "Large Size dark coffee cup costs: %f" (getDrinkPrice darkCoffe)
+    let cappuccinoCoffe = InCup( { Drink=Cappuccino; Size=DrinkSize.Large } )
+    printfn "Large Size cappuccino coffee cup costs: %f" (getDrinkPrice cappuccinoCoffe)
     
     let americanoCoffee = InCup( { Drink=Americano; Size=DrinkSize.Medium } )
     printfn "Medium Size americano cup costs: %f" (getDrinkPrice americanoCoffee)
