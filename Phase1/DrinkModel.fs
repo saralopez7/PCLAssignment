@@ -3,7 +3,7 @@ module DrinkModel
 type DrinkSize = Small = 0 | Medium = 1 | Large = 2
 
 type CupDrinks = 
-    Dark | Americano | Espresso
+    Dark | Americano | Espresso 
     member this.price = 
         match this with
         | Dark -> 50.96
@@ -34,10 +34,14 @@ type AllDrinks =
     | InCup of InCup
     | InCan of InCan
     | InBottle of InBottle
+    member this.Type =
+        match this with
+        | InCup _ -> "cup"
+        | InCan _ -> "can"
+        | InBottle _ -> "bottle"
 
 let getDrinkPrice drink = 
     match drink with
     | InCup (inCup) -> inCup.Drink.price + (15.0 * (float inCup.Size))
     | InCan (inCan) -> inCan.Drink.price + (5.0 * (float inCan.Size))
     | InBottle (inBottle) -> inBottle.Drink.price + (10.0 * (float inBottle.Size))
-    
