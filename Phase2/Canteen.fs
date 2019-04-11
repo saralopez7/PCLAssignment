@@ -9,11 +9,11 @@ type CanteenMessage =
 let Orders = ref []
 let Comments = ref []
 
-let ProcessOrderDrink (drink:AllDrinks, amount:int) = 
+let ProcessOrderDrink (drink:AllDrinks, quantity:int) = 
     try
-        let order = OrderDrink(drink, amount)
+        let order = OrderDrink(drink, quantity)
         Orders :=  order :: !Orders
-        printfn "Please pay DKK %f for your %i %s drinks. Thanks!" (getDrinkPrice(drink) * (double amount)) amount drink.Type
+        printfn "Please pay DKK %f for your %i %s drinks. Thanks!" (getDrinkPrice(drink) * (double quantity)) quantity drink.Type
     with
         | Failure(msg) -> printfn "Something went wrong while processing your order. %s. Please try again" msg
 
@@ -27,7 +27,7 @@ let canteenDrinkAgent =
             async { 
                 let! (canteenMessage:CanteenMessage) = inbox.Receive()
                 match canteenMessage with
-                | OrderDrink (drink, amount) -> ProcessOrderDrink (drink, amount)
+                | OrderDrink (drink, quantity) -> ProcessOrderDrink (drink, quantity)
                 | LeaveAComment (comment) -> ProcessLeaveAComment comment
 
                 return! messageLoop
